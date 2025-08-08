@@ -2,19 +2,18 @@
 
 A real-time financial simulation API built with Go, featuring League of Legends themed market tickers with live price movements implemented by Geometric Brownian Motion.
 
-## 🚀 Features
+## Features
 
 - **Real-time Price Simulation**: Continuous price updates using stochastic mathematical models
 - **RESTful API**: Clean JSON endpoints for market data and user management
 - **Time-Series Database**: MongoDB with optimized time-series collections and TTL indexes
-- **Containerized**: Full Docker setup with docker-compose orchestration
 
 
-## 🛠 Tech Stack
+## Technologies
 
 Golang, Echo, Docker, MongoDB
 
-## 🎮 Market Tickers
+## Market Tickers
 
 | Symbol | Name            | Drift | Volatility | Description    |
 | ------ | --------------- | ----- | ---------- | -------------- |
@@ -23,9 +22,7 @@ Golang, Echo, Docker, MongoDB
 | `ELD`  | Elder Dragon    | 15%   | 60%        | High growth    |
 | `CLD`  | Cloud Dragon    | 25%   | 80%        | Ultra volatile |
 
-## 🚀 Quick Start
-
-### Using Docker (Recommended)
+## Run with Docker
 
 ```bash
 # Clone and start
@@ -64,7 +61,7 @@ GET /api/users/{id}
 POST /api/users
 ```
 
-## 🧮 Price Simulation
+## Price Simulation
 
 Uses **Geometric Brownian Motion** model:
 
