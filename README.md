@@ -8,7 +8,6 @@ A real-time financial simulation API built with Go, featuring League of Legends 
 - **RESTful API**: Clean JSON endpoints for market data and user management
 - **Time-Series Database**: MongoDB with optimized time-series collections and TTL indexes
 
-
 ## Technologies
 
 Golang, Echo, Docker, MongoDB
@@ -37,7 +36,11 @@ docker ps
 docker logs {image_name}
 
 # API available at http://localhost:8080
-## 📡 API Endpoints
+
+```
+
+## API Endpoints
+
 ### Market Data
 
 ```bash
