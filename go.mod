@@ -3,7 +3,6 @@ module api-project
 go 1.24.3
 
 require (
-	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.13.4
 	go.mongodb.org/mongo-driver v1.17.4
 )

@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
@@ -15,8 +14,6 @@ import (
 )
 
 func main() {
-	_ = godotenv.Load()
-
 	ctx := context.Background()
 	client, err := dbpkg.Connect(ctx)
 	if err != nil {

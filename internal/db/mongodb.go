@@ -7,7 +7,6 @@ import (
 	"os"
 	"time"
 
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -26,7 +25,6 @@ type Client struct {
 }
 
 func Connect(ctx context.Context) (*Client, error) {
-	_ = godotenv.Load()
 	uri := os.Getenv("MONGO_CONNECTION_URI")
 
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(uri))

@@ -16,11 +16,10 @@ services:
     container_name: league-api
     ports:
       - "8080:8080"
-    env_file:
-      - .env
     environment:
-      # Override MongoDB URI for Docker networking
       MONGO_CONNECTION_URI: mongodb://mongodb:27017
+      MONGO_DB_NAME: goAPI
+      PORT: 8080
     depends_on:
       - mongodb
     networks:
