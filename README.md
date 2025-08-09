@@ -41,6 +41,31 @@ docker logs {image_name}
 
 ## API Endpoints
 
+### Logging In
+
+Create an Account
+```bash
+curl -X POST http://localhost:8080/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Aatrox",
+    "email": "aatrox@darkin.com",
+    "password": "fear"
+  }'
+```
+This will output a token - which will be your auth bearer token.
+
+Log In
+```bash
+curl -X POST http://localhost:8080/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "aatrox@darkin.com", 
+    "password": "fear"
+  }'
+```
+This will also give you your auth bearer token. 
+
 ### Market Data
 
 ```bash
@@ -62,6 +87,10 @@ GET /api/users/{id}
 
 # Create new user
 POST /api/users
+```
+These are protected routes. You will have to use your auth bearer wotken like so: 
+```bash
+-H "Authorization: Bearer (Token goes here)"
 ```
 
 ## Price Simulation
