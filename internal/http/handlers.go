@@ -31,9 +31,16 @@ func NewServer(users, tickers, priceTicks *mongo.Collection) *Server {
 }
 
 func (s *Server) RegisterRoutes(e *echo.Echo) {
-	e.GET("/api/users", s.getUsers)
-	e.POST("/api/users", s.createUser)
-	e.GET("/api/users/:id", s.getUser)
+	e.POST("/api/auth/register", s.register)
+	e.POST("/api/auth/login", s.login)
+
+	protected := e.Group("/api", s.AuthMiddleware())
+
+	protected.GET("/auth/me", s.me)
+
+	protected.GET("/users", s.getUsers)
+	protected.POST("/users", s.createUser)
+	protected.GET("/users/:id", s.getUser)
 
 	e.GET("/api/tickers", s.getTickers)
 	e.GET("/api/tickers/:symbol/price", s.getLatestPrice)
