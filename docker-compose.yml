@@ -17,7 +17,7 @@ services:
     ports:
       - "8080:8080"
     env_file:
-      - .env
+      - .env # contains JWT_SECRET
     environment:
       MONGO_CONNECTION_URI: mongodb://mongodb:27017
       MONGO_DB_NAME: goAPI
