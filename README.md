@@ -1,6 +1,7 @@
 # League Stocks
 
 A real-time financial simulation API built with Go, featuring League of Legends themed market tickers with live price movements implemented by Geometric Brownian Motion.
+Will need a jwt secret in your .env to use auth features
 
 ## Features
 
